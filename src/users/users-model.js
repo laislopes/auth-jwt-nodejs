@@ -24,8 +24,8 @@ class User {
     validations.stringFieldNotNull(this.name, 'name');
     validations.stringFieldNotNull(this.email, 'email');
     validations.stringFieldNotNull(this.password, 'password');
-    validations.fieldMaximumSize(this.password, 'password', 8);
-    validations.fieldMinimumSize(this.password, 'password', 64);
+    validations.fieldMinimumSize(this.password, 'password', 8);
+    validations.fieldMaximumSize(this.password, 'password', 64);
   }
 
   

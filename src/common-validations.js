@@ -2,22 +2,22 @@ const { InvalidArgumentError } = require('./errors');
 
 
 module.exports = {
-  campoStringNaoNulo: (valor, nome) => {
-    if (typeof valor !== 'string' || valor === 0)
-      throw new InvalidArgumentError(`É necessário preencher o campo ${nome}!`);
+  stringFieldNotNull: (value, name) => {
+    if (typeof value !== 'string' || value === 0)
+      throw new InvalidArgumentError(`It's necessary fill the field ${name}!`);
   },
 
-  campoTamanhoMinimo: (valor, nome, minimo) => {
-    if (valor.length < minimo)
+  fieldMinimumSize: (value, name, minimum) => {
+    if (value.length < minimum)
       throw new InvalidArgumentError(
-        `O campo ${nome} precisa ser maior que ${minimo} caracteres!`
+        `The field ${name} needs to be bigger than ${minimum} caracters!`
       );
   },
 
-  campoTamanhoMaximo: (valor, nome, maximo) => {
-    if (valor.length > maximo)
+  fieldMaximumSize: (value, name, maximum) => {
+    if (value.length > maximum)
       throw new InvalidArgumentError(
-        `O campo ${nome} precisa ser menor que ${maximo} caracteres!`
+        `The field ${name} needs to be less than ${maximum} caracters!`
       );
   }
 };
